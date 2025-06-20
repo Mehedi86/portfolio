@@ -7,9 +7,14 @@ function App() {
   return (
     <div className="flex">
       <Navbar />
-      <main className=" bg-[#2c2e3a] w-full min-h-screen flex items-center p-6 text-white">
-        <Hero/>
+      <main className="w-full min-h-screen flex items-center p-6 text-white">
+        <Hero />
       </main>
+      <div>
+        <h1 className="text-2xl m-4 font-bold text-white leading-tight cursor-pointer">
+          Abdullah
+        </h1>
+      </div>
     </div>
   );
 }
