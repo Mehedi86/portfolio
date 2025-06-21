@@ -3,17 +3,20 @@ import { IoHome } from "react-icons/io5";
 import { FaUserAlt, FaLaptopCode, FaProjectDiagram, FaGraduationCap } from "react-icons/fa";
 
 const Navbar = () => {
-    return (
-        <div className='bg-[#F5EFE7] h-72 w-16 rounded m-4 flex flex-col items-center py-4 space-y-6'>
-            <ul className='space-y-6'>
-                <li><IoHome size={32} title="Home" /></li>
-                <li><FaUserAlt size={32} title="About" /></li>
-                <li><FaLaptopCode size={32} title="Skills" /></li>
-                <li><FaProjectDiagram size={32} title="Projects" /></li>
-                <li><FaGraduationCap size={32} title="Education" /></li>
+  return (
+    <div className="w-full fixed top-0 z-60 p-4 flex justify-between items-center">
+            <ul className="text-[#F5EFE7] flex justify-between space-x-4 md:space-x-12">
+                <li><IoHome className="text-lg md:text-3xl " title="Home" /></li>
+                <li><FaUserAlt className="text-lg md:text-3xl " title="About" /></li>
+                <li><FaLaptopCode className="text-lg md:text-3xl " title="Skills" /></li>
+                <li><FaProjectDiagram className="text-lg md:text-3xl " title="Projects" /></li>
+                <li><FaGraduationCap className="text-lg md:text-3xl " title="Education" /></li>
             </ul>
+            <div>
+                <h1 className='text-lg md:text-3xl font-semibold'>Abdullah</h1>
+            </div>
         </div>
-    );
+  );
 };
 
 export default Navbar;
