@@ -12,7 +12,7 @@ const Hero = () => {
                 <img
                     src="/bg.jpg"
                     alt="Background"
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-full object-cover"
                 />
             </div>
 
