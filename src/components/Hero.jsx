@@ -3,8 +3,12 @@ import img from "/portfolio.jpg";
 import Particles from './Particles';
 import { Canvas } from '@react-three/fiber';
 import { Typewriter } from "react-simple-typewriter";
+import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
+    const resume = () => {
+        window.location.href = 'https://drive.google.com/file/d/1zCKRqJf4jV6EJezVtnHJy3GZflpMhM--/view?usp=drive_link';
+    }
     return (
         <div className="relative w-full min-h-screen">
             {/* Background Image */}
@@ -51,7 +55,7 @@ const Hero = () => {
                         best coding practices to ensure clean and scalable development.
                     </p>
 
-                    <button className="inline-block border border-[#00E6D8] text-[#00E6D8] hover:text-[#1A1A2E] font-semibold px-6 py-2 rounded shadow hover:bg-[#00c8bb] transition-all duration-300 cursor-pointer">
+                    <button onClick={resume} className="inline-block border border-[#00E6D8] text-[#00E6D8] hover:text-[#1A1A2E] font-semibold px-6 py-2 rounded shadow hover:bg-[#00c8bb] transition-all duration-300 cursor-pointer">
                         Download Resume
                     </button>
                 </div>
@@ -61,9 +65,16 @@ const Hero = () => {
                     <img
                         src={img}
                         alt="Md. Abdullah"
-                        className="rounded-xl w-full max-w-[300px] sm:max-w-sm md:max-w-md shadow-2xl border-4 border-[#00E6D8]/30"
+                        className="rounded-xl w-2/3 xl:w-full max-w-[300px] sm:max-w-sm md:max-w-md shadow-2xl border-4 border-[#00E6D8]/30"
                     />
                 </div>
+            </div>
+
+            {/* Down Arrow Button */}
+            <div className="absolute hidden lg:block bottom-6 left-1/2 transform -translate-x-1/2 z-30">
+                <button className="text-[#00E6D8] animate-bounce">
+                    <ChevronDown size={80} />
+                </button>
             </div>
         </div>
     );

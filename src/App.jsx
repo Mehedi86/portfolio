@@ -8,18 +8,17 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-
 function App() {
   return (
-    <div className="relative min-h-screen bg-black text-white">
+    <div className="relative min-h-screen bg-black text-white scroll-smooth">
       <Navbar />
-      <Hero />
-      <AboutMe />
-      <Skills />
-      <MyWorks />
-      <Education/>
-      <Contact/>
-      <Footer/>
+      <div id="home"><Hero /></div>
+      <div id="about"><AboutMe /></div>
+      <div id="skills"><Skills /></div>
+      <div id="works"><MyWorks /></div>
+      <div id="education"><Education /></div>
+      <div id="contact"><Contact /></div>
+      <Footer />
     </div>
   );
 }

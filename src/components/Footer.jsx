@@ -20,7 +20,7 @@ const Footer = () => {
             <FaEnvelope />
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Mehedi86"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#00E6D8] transition"
@@ -29,7 +29,7 @@ const Footer = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/mahdi866"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#00E6D8] transition"

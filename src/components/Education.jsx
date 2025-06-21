@@ -23,7 +23,7 @@ const educations = [
 
 const Education = () => {
   return (
-    <section id="education" className="bg-[#0f172a] text-white px-6 py-16 w-full">
+    <section id="education" className="bg-[#0f172a] text-white px-4 py-6 md:py-16 w-full md:min-h-[800px]">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-10 text-[#00E6D8] text-center md:text-left">
           Education

@@ -3,7 +3,7 @@ import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <section id="contact" className="bg-[#1A1A2E] text-white px-4 sm:px-6 py-16 w-full">
+    <section id="contact" className="bg-[#1A1A2E] text-white px-4 py-6 md:py-16 w-full md:min-h-[800px]">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-[#00E6D8] text-center sm:text-left">
           Contact
@@ -20,31 +20,31 @@ const Contact = () => {
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-[#00E6D8] text-lg" />
                 <a href="mailto:your.email@example.com" className="hover:underline break-all">
-                  your.email@example.com
+                  abdullahalmehedi86@gmail.com
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <FaGithub className="text-[#00E6D8] text-lg" />
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/Mehedi86"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline break-all"
                 >
-                  github.com/yourusername
+                  github.com/Mehedi86
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <FaLinkedin className="text-[#00E6D8] text-lg" />
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/mahdi866/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline break-all"
                 >
-                  linkedin.com/in/yourusername
+                  linkedin.com/in/mahdi866
                 </a>
               </div>
             </div>
