@@ -18,7 +18,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowRockets(false);
-    }, 20000); // Hide after 20 seconds
+    }, 40000); // Hide after 20 seconds
 
     return () => clearTimeout(timer);
   }, [showRockets]);
@@ -55,7 +55,7 @@ const Hero = () => {
     const [startY, setStartY] = useState(0);
     const [endX, setEndX] = useState(0);
     const [endY, setEndY] = useState(0);
-    const [duration, setDuration] = useState(1);
+    const [duration, setDuration] = useState(3); // slow by default
 
     useEffect(() => {
       const updatePosition = () => {
@@ -89,7 +89,7 @@ const Hero = () => {
         setStartY(newStartY);
         setEndX(newEndX);
         setEndY(newEndY);
-        setDuration(0.5 + Math.random() * 0.5);
+        setDuration(3 + Math.random() * 2); // slower: 3s to 5s
       };
 
       updatePosition();

@@ -62,7 +62,7 @@ const arrowVariants = {
 
 const Education = () => {
   return (
-    <section id="education" className="bg-gradient-to-br from-[#1a1b2e] to-[#2d2b4e] text-white px-4 py-6 md:py-16 w-full min-h-screen">
+    <section id="education" className=" text-white px-4 py-6 md:py-16 w-full min-h-screen">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}

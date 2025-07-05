@@ -66,7 +66,7 @@ const techVariants = {
 
 const MyWorks = () => {
   return (
-    <section id="projects" className="bg-[#1A1A2E] text-white px-4 py-6 md:py-16 w-full">
+    <section id="projects" className=" text-white px-4 py-6 md:py-16 w-full">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
@@ -86,7 +86,7 @@ const MyWorks = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-[#16213E] rounded-xl shadow-md overflow-hidden w-full min-h-[70vh] flex flex-col" // Full height project cards
+              className="bg-[#16213E] rounded-xl shadow-md overflow-hidden w-full flex flex-col" // Full height project cards
               variants={projectVariants}
               whileHover="hover"
             >
