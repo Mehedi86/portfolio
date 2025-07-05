@@ -68,7 +68,7 @@ const Education = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-5xl font-bold mb-16 text-[#ff7e5f] text-center"
+          className="text-3xl md:text-4xl font-bold mb-16 text-[#00E6D8] text-center"
         >
           My Education
         </motion.h2>
@@ -80,7 +80,7 @@ const Education = () => {
           animate="visible"
         >
           {/* Timeline line */}
-          <div className="absolute left-6 md:left-1/2 h-full w-1 bg-gradient-to-b from-[#ff7e5f] to-[#2d2b4e] rounded-full -z-10"></div>
+          <div className="absolute left-6 md:left-1/2 h-full w-1 bg-gradient-to-b from-[#00E6D8] to-[#2d2b4e] rounded-full -z-10"></div>
 
           {educations.map((edu, index) => (
             <motion.div
@@ -91,7 +91,7 @@ const Education = () => {
             >
               {/* Animated Arrow indicator - alternating directions */}
               <motion.div
-                className={`absolute left-4 md:left-1/2 w-6 h-6 transform -translate-x-1/2 -translate-y-1/2 top-1/2 text-[#ff7e5f]`}
+                className={`absolute left-4 md:left-1/2 w-6 h-6 transform -translate-x-1/2 -translate-y-1/2 top-1/2 text-[#00E6D8]`}
                 variants={arrowVariants}
                 initial="initial"
                 animate="animate"
@@ -112,7 +112,7 @@ const Education = () => {
                 }}></div>
                 
                 <motion.h3 
-                  className="text-2xl font-bold mb-2 text-[#ff9e7d]"
+                  className="text-2xl font-bold mb-2 text-[#00E6D8]"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
