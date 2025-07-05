@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { IoHome } from "react-icons/io5";
 import { FaUserAlt, FaLaptopCode, FaProjectDiagram, FaGraduationCap } from "react-icons/fa";
 import { GoProjectRoadmap } from "react-icons/go";
+import { motion } from "framer-motion";
 
 const sections = ["home", "about", "skills", "works", "education", "contact"];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [hoveredItem, setHoveredItem] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,40 +39,78 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { id: "home", icon: <IoHome title="Home" /> },
-    { id: "about", icon: <FaUserAlt title="About" /> },
-    { id: "skills", icon: <FaLaptopCode title="Skills" /> },
-    { id: "works", icon: <GoProjectRoadmap title="My Works" /> },
-    { id: "education", icon: <FaGraduationCap title="Education" /> },
-    { id: "contact", icon: <FaProjectDiagram title="Contact" /> },
+    { id: "home", icon: <IoHome />, label: "Home" },
+    { id: "about", icon: <FaUserAlt />, label: "About" },
+    { id: "skills", icon: <FaLaptopCode />, label: "Skills" },
+    { id: "works", icon: <GoProjectRoadmap />, label: "Works" },
+    { id: "education", icon: <FaGraduationCap />, label: "Education" },
+    { id: "contact", icon: <FaProjectDiagram />, label: "Contact" },
   ];
 
   return (
-    <div
-      className={`w-full fixed top-0 z-50 px-4 py-3 flex justify-between items-center transition duration-300 ${
-        isScrolled ? "backdrop-blur-lg bg-[#1A1A2E]/80 shadow-md" : ""
+    <motion.div
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`w-full fixed top-0 z-50 px-4 py-3 flex justify-between items-center transition-all duration-300 ${
+        isScrolled 
+          ? "backdrop-blur-lg bg-[#1A1A2E]/90 shadow-lg" 
+          : "bg-[#1A1A2E]/50"
       }`}
     >
-      <ul className="text-[#F5EFE7] flex justify-between space-x-4 md:space-x-12">
+      <motion.div 
+        className="text-white font-bold text-2xl md:text-3xl px-4"
+        whileHover={{ scale: 1.05 }}
+      >
+        <span className="text-[#00E6D8]">Abdullah</span>
+      </motion.div>
+
+      <ul className="flex items-center space-x-2 md:space-x-6">
         {navItems.map((item) => (
-          <li
+          <motion.li
             key={item.id}
-            className={`relative transition-all duration-300 ${
-              activeSection === item.id
-                ? "after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-white"
-                : ""
-            }`}
+            onMouseEnter={() => setHoveredItem(item.id)}
+            onMouseLeave={() => setHoveredItem(null)}
+            whileHover={{ y: -3 }}
+            className="relative"
           >
-            <a href={`#${item.id}`} className="text-lg md:text-3xl">
-              {item.icon}
+            <a 
+              href={`#${item.id}`} 
+              className={`flex flex-col items-center p-2 rounded-lg transition-all duration-300 ${
+                activeSection === item.id 
+                  ? "text-[#00E6D8]" 
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
+              <div className="text-xl md:text-2xl">
+                {item.icon}
+              </div>
+              
+              {/* Animated label */}
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ 
+                  opacity: hoveredItem === item.id ? 1 : 0,
+                  y: hoveredItem === item.id ? 0 : 10
+                }}
+                className="absolute top-full mt-1 text-xs font-medium whitespace-nowrap"
+              >
+                {item.label}
+              </motion.span>
             </a>
-          </li>
+
+            {/* Active indicator */}
+            {activeSection === item.id && (
+              <motion.div 
+                layoutId="activeIndicator"
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#00E6D8] rounded-full"
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              />
+            )}
+          </motion.li>
         ))}
       </ul>
-      <div>
-        <h1 className="text-lg md:text-3xl font-semibold">Abdullah</h1>
-      </div>
-    </div>
+    </motion.div>
   );
 };
 
